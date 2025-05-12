@@ -223,7 +223,7 @@
             <h1>Student Register</h1>
             
             <% 
-                List<StudentCard> studentCards = (List<StudentCard>)request.getAttribute("studentCards");
+                List<StudentCard> studentCards = (List<StudentCard>)request.getAttribute("list");
                 int studentCount = studentCards.size();
             %>
             

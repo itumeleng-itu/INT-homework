@@ -30,9 +30,9 @@ public class viewAllStudentsServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        List<StudentCard> studentCards = scfl.findAll();
+        List<StudentCard> list = scfl.findAll();
         
-        request.setAttribute("studentCards", studentCards);
+        request.setAttribute("list", list);
         
         RequestDispatcher disp = request.getRequestDispatcher("viewAllStudentCards.jsp");
         disp.forward(request, response);
