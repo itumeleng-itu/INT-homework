@@ -1,8 +1,4 @@
-<%-- 
-    Document   : searchStudentOutcome
-    Created on : 11 May 2025, 4:19:48 PM
-    Author     : matom
---%>
+
 
 <%@page import="za.ac.tut.entity.StudentCard"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
