@@ -1,0 +1,6 @@
+Name your Realms : FStudRealm
+group list roles:
+security
+invigilator
+lecturer
+tutor
