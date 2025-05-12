@@ -1,8 +1,4 @@
-<%-- 
-    Document   : deleteSuccess
-    Created on : 11 May 2025, 6:43:30 PM
-    Author     : matom
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
