@@ -1,8 +1,4 @@
-<%-- 
-    Document   : loginerror
-    Created on : 12 May 2025, 09:09:20
-    Author     : dell
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
