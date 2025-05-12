@@ -1,4 +1,4 @@
-Name your Realms : FStudRealm
+Name your Realms : FRealm
 group list roles:
 security
 invigilator
