@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>searchStudentServlet</servlet-name>
+        <servlet-class>za.ac.tut.web.searchStudentServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>addStudentServlet</servlet-name>
+        <servlet-class>za.ac.tut.web.addStudentServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>viewAllStudentsServlet</servlet-name>
+        <servlet-class>za.ac.tut.web.viewAllStudentsServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>updateStudentCardServlet</servlet-name>
+        <servlet-class>za.ac.tut.web.updateStudentCardServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>deleteStudentServlet</servlet-name>
+        <servlet-class>za.ac.tut.web.deleteStudentServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>StartSessionServlet</servlet-name>
+        <servlet-class>za.ac.tut.web.StartSessionServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>za.ac.tut.web.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>searchStudentServlet</servlet-name>
+        <url-pattern>/searchStudentServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>addStudentServlet</servlet-name>
+        <url-pattern>/addStudentServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>viewAllStudentsServlet</servlet-name>
+        <url-pattern>/viewAllStudentsServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>updateStudentCardServlet</servlet-name>
+        <url-pattern>/updateStudentCardServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>deleteStudentServlet</servlet-name>
+        <url-pattern>/deleteStudentServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>StartSessionServlet</servlet-name>
+        <url-pattern>/StartSessionServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/LogoutServlet.do</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <security-constraint>
+        <display-name>InvigilatorConstraint</display-name>
+        <web-resource-collection>
+            <web-resource-name>InvigilatorResources</web-resource-name>
+            <description>Resources available for invigilator</description>
+            <url-pattern>/invig.jsp</url-pattern>
+            <url-pattern>/searchStudentOutcome.jsp</url-pattern>
+            <url-pattern>/viewAllStudentCards.jsp</url-pattern>
+            <url-pattern>/viewAllStudentsServlet.do</url-pattern>
+            <url-pattern>/searchStudentServlet.do</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <description>Enable authentication for invigilator</description>
+            <role-name>invigilator</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <security-constraint>
+        <display-name>SecurityConstraint</display-name>
+        <web-resource-collection>
+            <web-resource-name>SecurityResources</web-resource-name>
+            <description>Resources available for Security</description>
+            <url-pattern>/searchStudentServlet.do</url-pattern>
+            <url-pattern>/sec.jsp</url-pattern>
+            <url-pattern>/searchStudentOutcome.jsp</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <description>Enable authentication for security</description>
+            <role-name>security</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <security-constraint>
+        <display-name>TutorConstraint</display-name>
+        <web-resource-collection>
+            <web-resource-name>TutorResources</web-resource-name>
+            <description>Resources available for tutor</description>
+            <url-pattern>/tutor.jsp</url-pattern>
+            <url-pattern>/searchStudentServlet.do</url-pattern>
+            <url-pattern>/searchStudentOutcome.jsp</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <description>Enable authentication for tutor</description>
+            <role-name>tutor</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <security-constraint>
+        <display-name>LecturerConstraint</display-name>
+        <web-resource-collection>
+            <web-resource-name>LecturerResources</web-resource-name>
+            <description>Resources available for lecturer</description>
+            <url-pattern>/lec.jsp</url-pattern>
+            <url-pattern>/addStudentOutcome.jsp</url-pattern>
+            <url-pattern>/deleteSuccess.jsp</url-pattern>
+            <url-pattern>/searchStudentOutcome.jsp</url-pattern>
+            <url-pattern>/updatedStudent.jsp</url-pattern>
+            <url-pattern>/viewAllStudentCards.jsp</url-pattern>
+            <url-pattern>/addStudentServlet.do</url-pattern>
+            <url-pattern>/deleteStudentServlet.do</url-pattern>
+            <url-pattern>/searchStudentServlet.do</url-pattern>
+            <url-pattern>/updateStudentCardServlet.do</url-pattern>
+            <url-pattern>/viewAllStudentsServlet.do</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <description>Enable authentication for lecturer</description>
+            <role-name>lecturer</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <realm-name>FStudRealm</realm-name>
+        <form-login-config>
+            <form-login-page>/login.jsp</form-login-page>
+            <form-error-page>/loginerror.jsp</form-error-page>
+        </form-login-config>
+    </login-config>
+    <security-role>
+        <description>a invigilator can search and view all students</description>
+        <role-name>invigilator</role-name>
+    </security-role>
+    <security-role>
+        <description>a security can search student</description>
+        <role-name>security</role-name>
+    </security-role>
+    <security-role>
+        <description>a tutor can search for student
+</description>
+        <role-name>tutor</role-name>
+    </security-role>
+    <security-role>
+        <description>a lecturer can add, view all, update, search and delete students</description>
+        <role-name>lecturer</role-name>
+    </security-role>
+    <error-page>
+        <error-code>403</error-code>
+        <location>/access_denied.jsp</location>
+    </error-page>
+</web-app>

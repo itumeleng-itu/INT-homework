@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Student Card Web App</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            /* Modern CSS styling */
+            :root {
+                --primary-color: #4285f4;
+                --secondary-color: #34a853;
+                --accent-color: #ea4335;
+                --light-color: #f8f9fa;
+                --dark-color: #202124;
+                --font-main: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            }
+            
+            body {
+                font-family: var(--font-main);
+                background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+                margin: 0;
+                padding: 0;
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                color: var(--dark-color);
+                text-align: center;
+            }
+            
+            div {
+                font-size: 2.5rem;
+                font-weight: 700;
+                margin-bottom: 1rem;
+                color: var(--primary-color);
+                text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+            }
+            
+            p {
+                font-size: 1.2rem;
+                max-width: 600px;
+                line-height: 1.6;
+                padding: 0 20px;
+            }
+            
+            a {
+                display: inline-block;
+                background-color: var(--primary-color);
+                color: white;
+                text-decoration: none;
+                padding: 12px 24px;
+                border-radius: 30px;
+                font-weight: 600;
+                margin-top: 20px;
+                transition: all 0.3s ease;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            }
+            
+            a:hover {
+                background-color: var(--secondary-color);
+                transform: translateY(-2px);
+                box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+            }
+            
+            /* Animation */
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            
+            body > * {
+                animation: fadeIn 0.8s ease-out forwards;
+            }
+            
+            /* Responsive design */
+            @media (max-width: 600px) {
+                div {
+                    font-size: 2rem;
+                }
+                p {
+                    font-size: 1rem;
+                }
+                a {
+                    padding: 10px 20px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div>Student Card Web</div>
+        <p>
+            Welcome to your digital student portal. Click the button below to access your student card and services.
+        </p>
+        <a href="StartSessionServlet.do">Get Started</a>
+    </body>
+</html>
+
