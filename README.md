@@ -8,4 +8,7 @@ However, the application is **fully functional** and has been thoroughly tested 
 ### 🚀 Demonstration
 We are fully prepared to present a **live demo** of the application running in NetBeans at your convenience.
 
-### The project file are in the master branch
+
+
+### Project Files
+The project files are in the master branch
